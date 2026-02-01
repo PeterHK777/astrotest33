@@ -1,0 +1,457 @@
+<!-- Nakke-beregner Modal -->
+<div id="beregner-overlay" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black/50" id="beregner-backdrop"></div>
+  <div class="relative flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+
+      <!-- Header -->
+      <div class="sticky top-0 bg-white border-b border-gray-100 rounded-t-2xl px-6 py-4 flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-gray-900">Nakkesmerter – vurdering</h2>
+          <p class="text-sm text-gray-500 mt-0.5">Besvar spørgsmålene for at få en anbefaling</p>
+        </div>
+        <button id="beregner-close" class="text-gray-400 hover:text-gray-600 transition-colors p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Spørgsmål -->
+      <div id="beregner-questions" class="px-6 py-6 space-y-6">
+
+        <!-- Progress bar -->
+        <div class="w-full bg-gray-100 rounded-full h-2">
+          <div id="progress-bar" class="bg-teal-400 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+        <p id="progress-text" class="text-xs text-gray-500 text-right">0 af 15 besvaret</p>
+
+        <!-- Sektion: Belastning og varighed -->
+        <div>
+          <h3 class="text-sm font-semibold text-teal-600 uppercase tracking-wide mb-4">Belastning og varighed</h3>
+          <div class="space-y-4">
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="1">
+              <p class="text-sm font-medium text-gray-800 mb-3">1. Har du haft nakkesmerter i mere end 6 uger?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="1">
+              <p class="text-sm font-medium text-gray-800 mb-3">2. Er smerterne blevet tydeligt værre de sidste 1–2 uger?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="1">
+              <p class="text-sm font-medium text-gray-800 mb-3">3. Provokeres smerterne tydeligt af nakkebevægelse (dreje/kigge op/ned) eller af statisk stilling (fx skærm/bil)?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="1">
+              <p class="text-sm font-medium text-gray-800 mb-3">4. Vågner du om natten pga. nakkesmerter, eller har du smerter i hvile uden at have belastet?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="1">
+              <p class="text-sm font-medium text-gray-800 mb-3">5. Har du markant nedsat bevægelighed i nakken ved aktiviteter (fx kan du ikke dreje til én side som normalt)?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sektion: Nerve-/neurologiske tegn -->
+        <div>
+          <h3 class="text-sm font-semibold text-teal-600 uppercase tracking-wide mb-4">Nerve- / neurologiske tegn</h3>
+          <div class="space-y-4">
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="2">
+              <p class="text-sm font-medium text-gray-800 mb-3">6. Stråler smerterne fra nakken ud i skulder/arm?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="2">
+              <p class="text-sm font-medium text-gray-800 mb-3">7. Har du prikken / "sovende fornemmelse" eller følelsesløshed i arm/hånd/fingre?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="3">
+              <p class="text-sm font-medium text-gray-800 mb-3">8. Oplever du nedsat kraft i arm/hånd (fx sværere ved at løfte, gribe, knappe)?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="2">
+              <p class="text-sm font-medium text-gray-800 mb-3">9. Har du symptomer i begge arme/hænder (prikken/nedsat kraft/følesans på begge sider)?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="3">
+              <p class="text-sm font-medium text-gray-800 mb-3">10. Har du problemer med finmotorik (fx knapper/skrivning) eller føler dig klodset i hænderne?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="3">
+              <p class="text-sm font-medium text-gray-800 mb-3">11. Har du balance-/gang-usikkerhed (snubler, "tunge ben", ustabil gang)?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sektion: Cervicogen hovedpine -->
+        <div>
+          <h3 class="text-sm font-semibold text-teal-600 uppercase tracking-wide mb-4">Cervicogen hovedpine / svimmelhed / TMJ</h3>
+          <div class="space-y-4">
+            <div class="question-card bg-gray-50 rounded-xl p-4" data-points="1">
+              <p class="text-sm font-medium text-gray-800 mb-3">12. Har du hovedpine som starter i nakken og forværres af nakkebevægelse eller stilling?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-teal-400" data-value="no">Nej</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sektion: Røde flag -->
+        <div>
+          <h3 class="text-sm font-semibold text-red-600 uppercase tracking-wide mb-4">Røde flag</h3>
+          <div class="space-y-4">
+            <div class="question-card bg-red-50 rounded-xl p-4" data-points="stop">
+              <p class="text-sm font-medium text-gray-800 mb-3">13. Har du haft ulykke/traume i nakken (fald, bil/cykel, sport/slag) lige før eller i forbindelse med starten?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-red-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-red-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-red-50 rounded-xl p-4" data-points="stop">
+              <p class="text-sm font-medium text-gray-800 mb-3">14. Har du feber, nylig infektion, uforklarligt vægttab eller kendt kræftsygdom sammen med nakkesmerter?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-red-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-red-400" data-value="no">Nej</button>
+              </div>
+            </div>
+
+            <div class="question-card bg-red-50 rounded-xl p-4" data-points="stop">
+              <p class="text-sm font-medium text-gray-800 mb-3">15. Har du pludseligt indsættende alvorlige neurologiske symptomer (fx syns-/talebesvær, besvimelse, kraftig pludselig hovedpine) eller hurtigt tiltagende udfald?</p>
+              <div class="flex gap-3">
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-red-400" data-value="yes">Ja</button>
+                <button class="answer-btn flex-1 py-2 rounded-lg border-2 border-gray-200 text-sm font-medium transition-all hover:border-red-400" data-value="no">Nej</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beregn-knap -->
+        <button
+          id="beregn-btn"
+          class="w-full bg-teal-400 hover:bg-teal-500 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-full transition-colors"
+          disabled
+        >
+          Se resultat
+        </button>
+      </div>
+
+      <!-- Lead capture -->
+      <div id="beregner-lead" class="px-6 py-8 hidden">
+        <div class="text-center mb-6">
+          <svg class="w-12 h-12 text-teal-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <h3 class="text-xl font-bold text-gray-900 mb-1">Din vurdering er klar</h3>
+          <p class="text-sm text-gray-500">Indtast dit navn og e-mail, så sender vi resultatet til dig.</p>
+        </div>
+        <form id="lead-form" class="space-y-4">
+          <div>
+            <label for="lead-name" class="block text-sm font-medium text-gray-700 mb-1">Navn</label>
+            <input
+              type="text"
+              id="lead-name"
+              name="name"
+              required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
+              placeholder="Dit fulde navn"
+            />
+          </div>
+          <div>
+            <label for="lead-email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+            <input
+              type="email"
+              id="lead-email"
+              name="email"
+              required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
+              placeholder="din@email.dk"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-teal-400 hover:bg-teal-500 text-white font-semibold py-3 rounded-full transition-colors"
+          >
+            Send mig resultatet
+          </button>
+          <p class="text-xs text-gray-400 text-center">Vi deler ikke din e-mail med andre.</p>
+        </form>
+      </div>
+
+      <!-- Resultat -->
+      <div id="beregner-result" class="px-6 py-8 hidden">
+        <div id="result-content"></div>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <button id="result-restart" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-3 rounded-full transition-colors text-sm">
+            Tag testen igen
+          </button>
+          <a href="/kontakt" class="flex-1 bg-teal-400 hover:bg-teal-500 text-white font-semibold py-3 rounded-full transition-colors text-sm text-center">
+            Kontakt os
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById('beregner-overlay')!;
+  const backdrop = document.getElementById('beregner-backdrop')!;
+  const closeBtn = document.getElementById('beregner-close')!;
+  const questionsEl = document.getElementById('beregner-questions')!;
+  const leadEl = document.getElementById('beregner-lead')!;
+  const leadForm = document.getElementById('lead-form') as HTMLFormElement;
+  const resultEl = document.getElementById('beregner-result')!;
+  const resultContent = document.getElementById('result-content')!;
+  const beregnBtn = document.getElementById('beregn-btn') as HTMLButtonElement;
+  const restartBtn = document.getElementById('result-restart')!;
+  const progressBar = document.getElementById('progress-bar')!;
+  const progressText = document.getElementById('progress-text')!;
+
+  const cards = document.querySelectorAll<HTMLElement>('.question-card');
+  const totalQuestions = cards.length;
+
+  let pendingResultHtml = '';
+
+  // Åbn modal
+  document.querySelectorAll('[data-open-beregner]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      overlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Luk modal
+  function closeModal() {
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Håndter svar
+  document.querySelectorAll('.answer-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.question-card')!;
+      card.querySelectorAll('.answer-btn').forEach((b) => {
+        b.classList.remove('border-teal-400', 'bg-teal-50', 'text-teal-700', 'border-red-400', 'bg-red-100', 'text-red-700');
+        b.classList.add('border-gray-200');
+      });
+
+      const isStop = card.getAttribute('data-points') === 'stop';
+      const isYes = btn.getAttribute('data-value') === 'yes';
+
+      if (isStop && isYes) {
+        btn.classList.remove('border-gray-200');
+        btn.classList.add('border-red-400', 'bg-red-100', 'text-red-700');
+      } else {
+        btn.classList.remove('border-gray-200');
+        btn.classList.add('border-teal-400', 'bg-teal-50', 'text-teal-700');
+      }
+
+      btn.setAttribute('data-selected', 'true');
+      card.querySelectorAll('.answer-btn').forEach((b) => {
+        if (b !== btn) b.removeAttribute('data-selected');
+      });
+
+      updateProgress();
+    });
+  });
+
+  function updateProgress() {
+    let answered = 0;
+    cards.forEach((card) => {
+      if (card.querySelector('[data-selected]')) answered++;
+    });
+    const pct = Math.round((answered / totalQuestions) * 100);
+    progressBar.style.width = pct + '%';
+    progressText.textContent = answered + ' af ' + totalQuestions + ' besvaret';
+    beregnBtn.disabled = answered < totalQuestions;
+  }
+
+  // Beregn resultat
+  beregnBtn.addEventListener('click', () => {
+    let score = 0;
+    let stopped = false;
+
+    cards.forEach((card) => {
+      const selected = card.querySelector('[data-selected]');
+      if (!selected) return;
+      const value = selected.getAttribute('data-value');
+      const points = card.getAttribute('data-points');
+
+      if (value === 'yes') {
+        if (points === 'stop') {
+          stopped = true;
+        } else {
+          score += parseInt(points || '0');
+        }
+      }
+    });
+
+    let html = '';
+
+    if (stopped) {
+      html = `
+        <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <svg class="w-8 h-8 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            <h3 class="text-lg font-bold text-red-800">STOP: Søg læge / akut vurdering</h3>
+          </div>
+          <p class="text-sm text-red-700 leading-relaxed">
+            Dine svar indeholder symptomer, der ikke egner sig til en online beregner.
+            Kontakt egen læge/lægevagt for vurdering.
+          </p>
+          <p class="text-sm text-red-700 leading-relaxed mt-2 font-semibold">
+            Hvis du har pludselige syns- eller talebesvær, besvimelse eller andre alvorlige neurologiske symptomer: ring 112.
+          </p>
+        </div>`;
+    } else {
+      let level = '';
+      let color = '';
+      let icon = '';
+      let text = '';
+
+      if (score <= 3) {
+        level = 'Lav risiko';
+        color = 'green';
+        icon = `<svg class="w-8 h-8 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`;
+        text = 'Sandsynligvis et "ukompliceret" nakkeproblem → selvhjælp/øvelser + observation.';
+      } else if (score <= 7) {
+        level = 'Moderat';
+        color = 'yellow';
+        icon = `<svg class="w-8 h-8 text-yellow-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`;
+        text = 'Anbefaler fysioterapi (screening + plan).';
+      } else if (score <= 12) {
+        level = 'Høj';
+        color = 'orange';
+        icon = `<svg class="w-8 h-8 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>`;
+        text = 'Anbefaler hurtig fysioterapi og kontakt læge ved forværring eller udfald (særligt ved prikken/følelsesløshed/kraftnedsættelse/balanceproblemer).';
+      } else {
+        level = 'Meget høj';
+        color = 'red';
+        icon = `<svg class="w-8 h-8 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>`;
+        text = 'Anbefaler hurtig vurdering hos fysioterapeut – og læge ved forværring, kraftnedsættelse eller andre neurologiske udfald.';
+      }
+
+      const bgColors: Record<string, string> = { green: 'bg-green-50 border-green-200', yellow: 'bg-yellow-50 border-yellow-200', orange: 'bg-orange-50 border-orange-200', red: 'bg-red-50 border-red-200' };
+      const textColors: Record<string, string> = { green: 'text-green-800', yellow: 'text-yellow-800', orange: 'text-orange-800', red: 'text-red-800' };
+
+      html = `
+        <div class="${bgColors[color]} border rounded-xl p-6">
+          <div class="flex items-center gap-3 mb-3">
+            ${icon}
+            <div>
+              <h3 class="text-lg font-bold ${textColors[color]}">${level}</h3>
+              <p class="text-xs ${textColors[color]} opacity-70">Score: ${score} point</p>
+            </div>
+          </div>
+          <p class="text-sm ${textColors[color]} leading-relaxed">${text}</p>
+        </div>`;
+    }
+
+    questionsEl.classList.add('hidden');
+
+    if (stopped) {
+      // STOP: vis resultat direkte (patientsikkerhed)
+      resultContent.innerHTML = html;
+      resultEl.classList.remove('hidden');
+    } else {
+      // Gem resultatet og vis lead-formular
+      pendingResultHtml = html;
+      leadEl.classList.remove('hidden');
+    }
+  });
+
+  // Lead-formular submit
+  leadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = (document.getElementById('lead-name') as HTMLInputElement).value;
+    const email = (document.getElementById('lead-email') as HTMLInputElement).value;
+
+    // Log lead-data (i produktion: send til backend/API)
+    console.log('Lead captured:', { name, email });
+
+    // Vis resultatet
+    resultContent.innerHTML = `
+      <div class="bg-teal-50 border border-teal-200 rounded-xl p-4 mb-4">
+        <p class="text-sm text-teal-800">
+          <span class="font-semibold">${name}</span>, dit resultat er sendt til <span class="font-semibold">${email}</span>
+        </p>
+      </div>` + pendingResultHtml;
+
+    leadEl.classList.add('hidden');
+    resultEl.classList.remove('hidden');
+  });
+
+  // Genstart
+  function resetBeregner() {
+    cards.forEach((card) => {
+      card.querySelectorAll('.answer-btn').forEach((b) => {
+        b.classList.remove('border-teal-400', 'bg-teal-50', 'text-teal-700', 'border-red-400', 'bg-red-100', 'text-red-700');
+        b.classList.add('border-gray-200');
+        b.removeAttribute('data-selected');
+      });
+    });
+    beregnBtn.disabled = true;
+    progressBar.style.width = '0%';
+    progressText.textContent = '0 af ' + totalQuestions + ' besvaret';
+    leadForm.reset();
+    pendingResultHtml = '';
+    resultEl.classList.add('hidden');
+    leadEl.classList.add('hidden');
+    questionsEl.classList.remove('hidden');
+  }
+
+  restartBtn.addEventListener('click', resetBeregner);
+</script>

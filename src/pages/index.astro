@@ -1,0 +1,575 @@
+---
+import Base from '../layouts/Base.astro';
+
+const baskerville = "font-family: 'Libre Baskerville', serif;";
+---
+
+<Base title="Tækkemand Sjælland – Nyt stråtag, reparation og renovering | Tækkekollektivet">
+
+  <!-- HERO -->
+  <section class="relative">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80');"
+    >
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Venstre: Overskrift, USPer, CTAer -->
+      <div>
+        <h1 class="text-[#E8A849] font-semibold text-sm uppercase tracking-wider mb-3">
+          Tækkemand på Sjælland
+        </h1>
+        <p class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight" style={baskerville}>
+          Nyt stråtag, reparation og renovering
+        </p>
+        <p class="text-white/85 text-base md:text-lg mb-8 leading-relaxed">
+          Vi er erfarne tækkemænd med passion for traditionelt håndværk.
+          Få et uforpligtende tilbud på dit næste projekt.
+        </p>
+
+        <!-- USPer -->
+        <ul class="space-y-3 mb-10">
+          <li class="flex items-center gap-3 text-white">
+            <svg class="w-5 h-5 text-[#E8A849] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm md:text-base">30+ års erfaring med stråtage</span>
+          </li>
+          <li class="flex items-center gap-3 text-white">
+            <svg class="w-5 h-5 text-[#E8A849] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm md:text-base">Dækker hele Sjælland</span>
+          </li>
+          <li class="flex items-center gap-3 text-white">
+            <svg class="w-5 h-5 text-[#E8A849] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm md:text-base">Uforpligtende tilbud inden 24 timer</span>
+          </li>
+          <li class="flex items-center gap-3 text-white">
+            <svg class="w-5 h-5 text-[#E8A849] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm md:text-base">Kvalitetsmaterialer og garanti</span>
+          </li>
+        </ul>
+
+        <!-- CTAer -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#priser"
+            class="inline-flex items-center justify-center gap-2 bg-[#C57908] hover:bg-[#a56507] text-white font-semibold px-7 py-3 rounded transition-colors text-sm"
+          >
+            Se priser
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a
+            href="tel:+4551522623"
+            class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-7 py-3 rounded border border-white/30 transition-colors text-sm"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            Ring: 51 52 26 23
+          </a>
+        </div>
+      </div>
+
+      <!-- Højre: Kontaktformular -->
+      <div class="bg-white rounded-xl shadow-2xl p-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-1" style={baskerville}>Få et gratis tilbud</h2>
+        <p class="text-sm text-gray-500 mb-6">Udfyld formularen – vi vender tilbage inden 24 timer</p>
+        <form id="hero-contact-form" class="space-y-4">
+          <div>
+            <label for="hero-name" class="block text-sm font-medium text-gray-700 mb-1">Navn</label>
+            <input
+              type="text"
+              id="hero-name"
+              name="name"
+              required
+              class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#C57908] focus:border-transparent outline-none"
+              placeholder="Dit fulde navn"
+            />
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="hero-phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon</label>
+              <input
+                type="tel"
+                id="hero-phone"
+                name="phone"
+                required
+                class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#C57908] focus:border-transparent outline-none"
+                placeholder="12 34 56 78"
+              />
+            </div>
+            <div>
+              <label for="hero-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input
+                type="email"
+                id="hero-email"
+                name="email"
+                class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#C57908] focus:border-transparent outline-none"
+                placeholder="din@email.dk"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="hero-service" class="block text-sm font-medium text-gray-700 mb-1">Hvad drejer det sig om?</label>
+            <select
+              id="hero-service"
+              name="service"
+              class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#C57908] focus:border-transparent outline-none text-gray-700"
+            >
+              <option value="">Vælg ydelse</option>
+              <option value="nyt-straatag">Nyt stråtag</option>
+              <option value="reparation">Reparation af stråtag</option>
+              <option value="rygning">Rygning / mønning</option>
+              <option value="brandsikring">Brandsikring</option>
+              <option value="andet">Andet</option>
+            </select>
+          </div>
+          <div>
+            <label for="hero-message" class="block text-sm font-medium text-gray-700 mb-1">Besked</label>
+            <textarea
+              id="hero-message"
+              name="message"
+              rows="3"
+              class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#C57908] focus:border-transparent outline-none resize-none"
+              placeholder="Beskriv kort dit projekt..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-[#C57908] hover:bg-[#a56507] text-white font-semibold py-3 rounded transition-colors text-sm"
+          >
+            Send forespørgsel
+          </button>
+          <p class="text-xs text-gray-400 text-center">Vi deler aldrig dine oplysninger med tredjepart</p>
+        </form>
+        <div id="hero-form-success" class="hidden text-center py-8">
+          <svg class="w-12 h-12 text-green-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <h3 class="text-lg font-bold text-gray-900 mb-1">Tak for din henvendelse!</h3>
+          <p class="text-sm text-gray-600">Vi vender tilbage inden for 24 timer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 1: Introduktion -->
+  <section id="profil" class="py-20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 leading-snug" style={baskerville}>
+          Erfarne tækkemænd med passion for håndværket
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Hos Tækkekollektivet kombinerer vi mange års erfaring med en ægte passion for det
+          traditionelle tækkehåndværk. Vi arbejder med de bedste materialer og sikrer, at hvert
+          projekt lever op til de højeste standarder.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Vores team dækker hele Sjælland og tilbyder alt fra nytækning til reparation og
+          vedligeholdelse af stråtage. Vi rådgiver dig gerne om den bedste løsning til netop dit tag.
+        </p>
+        <a
+          href="/kontakt"
+          class="inline-block bg-[#C57908] hover:bg-[#a56507] text-white font-medium px-6 py-2.5 rounded transition-colors text-sm"
+        >
+          Kontakt os
+        </a>
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=700&q=80"
+          alt="Tækkemænd på arbejde"
+          class="w-full h-[400px] object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 2: Nyt stråtag -->
+  <section id="ydelser" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-lg overflow-hidden order-2 lg:order-1">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=700&q=80"
+          alt="Nyt stråtag"
+          class="w-full h-[400px] object-cover"
+        />
+      </div>
+      <div class="order-1 lg:order-2">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 leading-snug" style={baskerville}>
+          Nyt stråtag
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Et nyt stråtag er en stor investering, og vi sørger for, at du får det bedste resultat.
+          Vi rådgiver om materialevalg, dimensionering og design, så dit nye tag passer perfekt
+          til din ejendom.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Vi bruger kun førsteklasses tækkerør og arbejder efter de nyeste standarder for
+          holdbarhed og brandsikkerhed. Et nyt stråtag fra os holder i mange årtier.
+        </p>
+        <a
+          href="#priser"
+          class="inline-block bg-[#C57908] hover:bg-[#a56507] text-white font-medium px-6 py-2.5 rounded transition-colors text-sm"
+        >
+          Hvad koster et stråtag
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 3: Reparation og renovering -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 leading-snug" style={baskerville}>
+          Reparation og renovering
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Et stråtag kræver løbende vedligeholdelse for at holde sig i god stand. Vi tilbyder
+          alt fra mindre reparationer til større renoveringsprojekter, hvor vi udskifter slidte
+          partier og sikrer tagets levetid.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Regelmæssig vedligeholdelse forlænger dit stråtags levetid betydeligt og forebygger
+          dyrere reparationer på sigt. Vi anbefaler et serviceeftersyn hvert 3.–5. år.
+        </p>
+        <a
+          href="/kontakt"
+          class="inline-block bg-[#C57908] hover:bg-[#a56507] text-white font-medium px-6 py-2.5 rounded transition-colors text-sm"
+        >
+          Læs mere om reparation
+        </a>
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=700&q=80"
+          alt="Reparation af stråtag"
+          class="w-full h-[400px] object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 4: Rygning -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-lg overflow-hidden order-2 lg:order-1">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80"
+          alt="Tagrygning"
+          class="w-full h-[400px] object-cover"
+        />
+      </div>
+      <div class="order-1 lg:order-2">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 leading-snug" style={baskerville}>
+          Rygning af stråtag
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Rygningen er den øverste del af stråtaget, hvor de to tagflader mødes. Vi tilbyder
+          både traditionel halmrygning og moderne løsninger, der sikrer tæthed og æstetik.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          En vellavet rygning er afgørende for tagets holdbarhed og udseende. Vi bruger
+          traditionelle teknikker kombineret med moderne viden om vejrbestandighed.
+        </p>
+        <a
+          href="/kontakt"
+          class="inline-block bg-[#C57908] hover:bg-[#a56507] text-white font-medium px-6 py-2.5 rounded transition-colors text-sm"
+        >
+          Læs mere om rygning
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 5: Brandsikring -->
+  <section class="py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 leading-snug" style={baskerville}>
+        Brandsikring af stråtag
+      </h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Brandsikkerhed er et vigtigt emne for ejere af stråtage. Vi tilbyder effektive
+        brandsikringsløsninger, der beskytter dit tag uden at gå på kompromis med det
+        traditionelle udseende. Moderne brandhæmmende materialer og teknikker gør det muligt
+        at reducere brandrisikoen betydeligt.
+      </p>
+      <a
+        href="/kontakt"
+        class="inline-block bg-[#C57908] hover:bg-[#a56507] text-white font-medium px-6 py-2.5 rounded transition-colors text-sm"
+      >
+        Læs mere om brandsikring
+      </a>
+    </div>
+  </section>
+
+  <!-- SEKTION 6: Fordele ved stråtag -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-snug" style={baskerville}>
+        Hvorfor vælge et stråtag?
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="font-bold mb-2" style={baskerville}>Naturlig isolering</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Stråtage har fremragende isoleringsegenskaber – varmt om vinteren og køligt om sommeren.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="font-bold mb-2" style={baskerville}>Æstetik og charme</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Intet andet tagmateriale giver den samme varme og autentiske karakter som et stråtag.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="font-bold mb-2" style={baskerville}>Dansk tradition</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Stråtage er en del af den danske kulturarv og bevarer landets arkitektoniske identitet.
+          </p>
+        </div>
+      </div>
+      <a
+        href="#"
+        class="inline-block mt-8 bg-[#C57908] hover:bg-[#a56507] text-white font-medium px-6 py-2.5 rounded transition-colors text-sm"
+      >
+        Flere fordele ved stråtag
+      </a>
+    </div>
+  </section>
+
+  <!-- SEKTION 7: Dækningsområder -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center leading-snug" style={baskerville}>
+        Vi dækker hele Sjælland
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-lg p-6 text-center">
+          <h3 class="font-bold text-lg mb-2" style={baskerville}>Nordsjælland</h3>
+          <p class="text-sm text-gray-600">
+            Hillerød, Helsingør, Fredensborg, Gilleleje, Hornbæk og omegn.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-6 text-center">
+          <h3 class="font-bold text-lg mb-2" style={baskerville}>Vestsjælland</h3>
+          <p class="text-sm text-gray-600">
+            Holbæk, Kalundborg, Slagelse, Sorø, Ringsted og omegn.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-6 text-center">
+          <h3 class="font-bold text-lg mb-2" style={baskerville}>Sydsjælland</h3>
+          <p class="text-sm text-gray-600">
+            Næstved, Vordingborg, Præstø, Faxe og omegn.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 8: Priser -->
+  <section id="priser" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center leading-snug" style={baskerville}>
+        Priser på stråtag
+      </h2>
+
+      <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <h3 class="font-bold text-lg mb-4" style={baskerville}>Standardpriser</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center py-2 border-b border-gray-100">
+            <span class="text-gray-700">Nytækning</span>
+            <span class="font-semibold">800 – 1.375 kr/m²</span>
+          </div>
+          <div class="flex justify-between items-center py-2 border-b border-gray-100">
+            <span class="text-gray-700">Halmrygning</span>
+            <span class="font-semibold">400 – 450 kr/m²</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <h3 class="font-bold text-lg mb-4" style={baskerville}>Priseksempler – komplet projekt (160 m²)</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center py-2 border-b border-gray-100">
+            <div>
+              <span class="text-gray-700 font-medium">Luksus-løsning</span>
+              <span class="text-xs text-gray-400 ml-2">(2.160 kr/m²)</span>
+            </div>
+            <span class="font-semibold">346.875 kr</span>
+          </div>
+          <div class="flex justify-between items-center py-2 border-b border-gray-100">
+            <div>
+              <span class="text-gray-700 font-medium">Basis-løsning</span>
+              <span class="text-xs text-gray-400 ml-2">(1.550 kr/m²)</span>
+            </div>
+            <span class="font-semibold">248.190 kr</span>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 mt-4">
+          Forventet prisniveau alt inklusiv: 1.600 – 2.100 kr/m²
+        </p>
+      </div>
+
+      <div class="text-center">
+        <a
+          href="/kontakt"
+          class="inline-block bg-[#C57908] hover:bg-[#a56507] text-white font-medium px-8 py-3 rounded transition-colors text-sm"
+        >
+          Få et uforpligtende tilbud
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 9: Proces -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center leading-snug" style={baskerville}>
+        Sådan foregår processen
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          { step: '1', title: 'Dialog & besigtigelse', desc: 'Vi starter med en uforpligtende snak og kommer ud og ser på dit tag.' },
+          { step: '2', title: 'Tilbud & aftale', desc: 'Du modtager et detaljeret tilbud med priser, tidsplan og materialevalg.' },
+          { step: '3', title: 'Udførelse', desc: 'Vores erfarne tækkemænd udfører arbejdet med fokus på kvalitet og omhu.' },
+          { step: '4', title: 'Aflevering', desc: 'Vi gennemgår det færdige resultat sammen og sikrer din tilfredshed.' },
+        ].map((item) => (
+          <div class="text-center">
+            <div class="w-14 h-14 bg-[#C57908] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+              {item.step}
+            </div>
+            <h3 class="font-bold mb-2" style={baskerville}>{item.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 10: Galleri -->
+  <section id="galleri" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center leading-snug" style={baskerville}>
+        Udvalgte projekter
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="group rounded-lg overflow-hidden shadow-sm">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80"
+            alt="Gård ved Hillerød"
+            class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="bg-white p-4">
+            <h3 class="font-semibold" style={baskerville}>Gård ved Hillerød</h3>
+            <p class="text-sm text-gray-500">Komplet nytækning</p>
+          </div>
+        </div>
+        <div class="group rounded-lg overflow-hidden shadow-sm">
+          <img
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&q=80"
+            alt="Gård ved Gilleleje"
+            class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="bg-white p-4">
+            <h3 class="font-semibold" style={baskerville}>Gård ved Gilleleje</h3>
+            <p class="text-sm text-gray-500">Renovering og rygning</p>
+          </div>
+        </div>
+        <div class="group rounded-lg overflow-hidden shadow-sm">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80"
+            alt="Gård ved Vedbæk"
+            class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="bg-white p-4">
+            <h3 class="font-semibold" style={baskerville}>Gård ved Vedbæk</h3>
+            <p class="text-sm text-gray-500">Reparation og brandsikring</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 11: FAQ -->
+  <section class="py-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center leading-snug" style={baskerville}>
+        Ofte stillede spørgsmål
+      </h2>
+      <div class="space-y-4">
+        {[
+          { q: 'Hvor lang tid holder et stråtag?', a: 'Et velholdt stråtag kan holde 30–40 år, afhængigt af kvaliteten af materialer, hældning og vedligeholdelse. Sydsiden slides typisk hurtigere end nordsiden.' },
+          { q: 'Hvad koster et nyt stråtag?', a: 'Prisen afhænger af tagets størrelse, tilstand og kompleksitet. Som tommelfingerregel ligger prisen på 1.600–2.100 kr/m² alt inklusiv. Kontakt os for et præcist tilbud.' },
+          { q: 'Hvor lang tid tager det at lægge et nyt stråtag?', a: 'Et typisk projekt tager 3–6 uger afhængigt af tagets størrelse og vejrforhold. Vi planlægger altid i samråd med dig.' },
+          { q: 'Kan man brandsikre et stråtag?', a: 'Ja, der findes flere effektive brandsikringsmetoder, herunder brandhæmmende imprægnering og brandsikre underlag. Vi rådgiver gerne om de bedste løsninger.' },
+          { q: 'Dækker forsikringen et stråtag?', a: 'De fleste forsikringsselskaber dækker stråtage, men præmien kan være højere. Brandsikring kan ofte reducere forsikringspræmien.' },
+          { q: 'Hvornår er den bedste tid at tække?', a: 'Den bedste periode er forår til efterår, men vi kan arbejde hele året, så længe vejret tillader det. Vi anbefaler at planlægge i god tid.' },
+          { q: 'Kan I reparere kun en del af taget?', a: 'Ja, vi udfører delreparationer, hvor kun de slidte partier udskiftes. Det er en omkostningseffektiv løsning, der forlænger tagets samlede levetid.' },
+          { q: 'Hvilke materialer bruger I?', a: 'Vi bruger primært danske og polske tækkerør af højeste kvalitet. Valget af rør afhænger af projektet og dine præferencer.' },
+          { q: 'Tilbyder I garanti?', a: 'Ja, vi tilbyder garanti på vores arbejde. Den præcise garantiperiode afhænger af projektets omfang og aftales ved tilbudsgivning.' },
+        ].map((item) => (
+          <details class="group border border-gray-200 rounded-lg bg-white">
+            <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-medium text-gray-800">
+              {item.q}
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION 12: Kontakt CTA -->
+  <section class="py-20 bg-[#C57908]">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4" style={baskerville}>
+        Klar til at komme i gang?
+      </h2>
+      <p class="text-white/80 mb-8 leading-relaxed">
+        Kontakt os i dag for en uforpligtende snak om dit projekt. Vi vender tilbage inden for 24 timer.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+        <a href="tel:+4551522623" class="text-white text-lg font-semibold hover:text-white/80 transition-colors">
+          Tlf: 51 52 26 23
+        </a>
+        <span class="text-white/40 hidden sm:inline">|</span>
+        <a href="mailto:info@taekkekollektivet.dk" class="text-white text-lg font-semibold hover:text-white/80 transition-colors">
+          info@taekkekollektivet.dk
+        </a>
+      </div>
+      <a
+        href="/kontakt"
+        class="inline-block bg-white hover:bg-gray-100 text-[#C57908] font-semibold px-8 py-3 rounded transition-colors text-sm"
+      >
+        Kontakt os for et uforpligtende tilbud
+      </a>
+    </div>
+  </section>
+
+  <script>
+    const heroForm = document.getElementById('hero-contact-form');
+    const heroSuccess = document.getElementById('hero-form-success');
+    heroForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(heroForm as HTMLFormElement));
+      console.log('Hero form data:', data);
+      (heroForm as HTMLElement).classList.add('hidden');
+      heroSuccess?.classList.remove('hidden');
+    });
+  </script>
+</Base>
